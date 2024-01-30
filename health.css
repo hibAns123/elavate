@@ -1,0 +1,38 @@
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+   
+}
+
+#result {
+    font-weight: bold;
+    color: #1e90ff;
+}
+/* footer */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 80px 100px;
+
+}
+
+
+
+footer {
+    background-color: rgb(92, 77, 53);
+    color: white;
+    padding-top: 10PX;
+    margin-top: 50px;
+}
+
+
+.canv p {
+    width: 257px;
+}
+
+.canv h5 {
+    size: 20px;
+}
+

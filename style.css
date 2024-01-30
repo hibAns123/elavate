@@ -1,0 +1,26 @@
+/* footer */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 100px 100px;
+
+}
+
+
+
+footer {
+    background-color: rgb(92, 77, 53);
+    color: white;
+    padding-top: 10PX;
+}
+
+
+.canv p {
+    width: 257px;
+}
+
+.canv h5 {
+    size: 20px;
+}
+

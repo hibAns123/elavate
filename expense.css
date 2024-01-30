@@ -1,0 +1,72 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 200px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#expenseList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.expenseItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+#totalAmount {
+    font-weight: bold;
+    margin-top: 10px;
+}
+  /* footer */
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 80px 100px;
+  
+  }
+  
+  
+  
+  footer {
+    background-color: rgb(119, 103, 93);
+    color: white;
+    padding-top: 10PX;
+    margin-top: 50px;
+  }
+  
+  
+  .canv p {
+    width: 257px;
+  }
+  
+  .canv h5 {
+    size: 20px;
+  }
+  
+  

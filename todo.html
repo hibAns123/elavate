@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="./todo.css">
+   
+  
+</head>
+<body>
+    <img width="100%" src="./img/Landing Page.png" alt="">
+    <h1>"Crafting Your Daily Symphony: Elevate Success with Strategic Achievements"</h1>
+    <p>"Mastering each day is not about doing more, but doing what truly matters. Embrace the rhythm of daily achievements, for in the details of organization and purposeful planning, you discover the symphony of success."</p>
+ 
+
+
+
+  <div class="crd" style="display: flex; justify-content: space-around; align-items: center;">
+    <div class="dar" style="margin: 20px;"><img style="width: 100%;" src="./img/1.png" alt=""></div>
+    <div class="dar" style="margin: 20px;"><img style="width: 100%;" src="./img/3.png" alt=""></div>
+    <div class="dar" style="margin: 20px;"><img style="width: 100%;" src="./img/2.png" alt=""></div>
+    <div class="dar" style="margin: 20px;"><img style="width: 100%;" src="./img/4.png" alt=""></div>
+  </div>
+  <h1>Elevate Your Productivity with the Ultimate Action Plan</h1>
+
+  <div>
+    <input style="border: 0px; background-color: rgb(211, 207, 207);" type="text" id="taskInput" placeholder="Add a new task">
+    <button style="border: 0px; background-color: burlywood; padding: 7px;border-radius: 4px;" onclick="addTask()" id="addTaskBtn">Add Task</button>
+  </div>
+  <ul id="taskList"></ul>
+     <!-- footer -->
+     <footer>
+      <div class="footer">
+          <div class="canv">
+<a href="./index.html">
+                <img src="./img/elavate.png" alt="">
+  
+</a>
+          </div>
+          <div class="canv">
+              <h5>About US</h5>
+              <P>Revamp your life with our planner. Set goals, track progress, and build a healthier, fulfilling life.
+              </P>
+          </div>
+
+         
+          <div class="canv">
+              <h5>Contact Us</h5>
+              <p>+0 12 457 4578</p>
+
+          </div>
+      </div>
+      </div>
+      <HR>
+      </HR>
+  </footer>
+
+</body>
+<script>
+    function addTask() {
+      const taskInput = document.getElementById('taskInput');
+      const taskList = document.getElementById('taskList');
+
+      if (taskInput.value.trim() === '') {
+        alert('Please enter a task.');
+        return;
+      }
+
+      const taskItem = document.createElement('li');
+      taskItem.className = 'taskItem';
+
+      const taskText = document.createElement('span');
+      taskText.textContent = taskInput.value;
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.className = 'deleteBtn';
+      deleteBtn.textContent = 'Delete';
+      deleteBtn.onclick = function() {
+        taskList.removeChild(taskItem);
+      };
+
+      taskItem.appendChild(taskText);
+      taskItem.appendChild(deleteBtn);
+
+      taskList.appendChild(taskItem);
+
+      taskInput.value = ''; // Clear input field after adding task
+    }
+  </script>
+</html>

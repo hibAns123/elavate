@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Calculator</title>
+  <link rel="stylesheet" href="./expense.css">
+</head>
+<body>
+<div style="margin: -80px 100px 0px 100px;">
+    <img style=" width: 100%;" src="./img/Black and Light Green Photographic Education Charity Non-Profit Website (1).png" alt="">
+  
+</div> 
+<h1 style="font-weight: bolder; font-size: 40px; text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(137, 86, 61);">Welcome to Financial Freedom: <br> Where Every Rupees Finds Purpose!</h1>
+<p style="text-align: center; margin: 10px 100px; font-size: 20px; color: rgb(131, 124, 114); font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> "Elevate your financial wellness with our intuitive expense tracker. Seamlessly monitor and analyze your spending patterns, gaining valuable insights to shape a more mindful and strategic approach to your finances. Stay in control, set achievable financial goals, and foster a future of economic empowerment. Make informed choices that align with your aspirations, as you navigate the path to financial well-being with confidence and ease."</p>
+<h1 style="font-weight: bolder; font-size: 40px; text-align: center; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(70, 54, 46);">Uncover Your Financial Footprint</h1>
+
+ 
+    <div class="1" style="display: flex; justify-content: space-evenly; align-items: center; margin-bottom: 20px;">
+      <label for="amountInput">Amount:</label>
+      <input style="background-color: rgb(224, 212, 212); border: 0px;" type="number" id="amountInput" placeholder="Enter amount">
+    </div>
+  
+    <div class="2" style="display: flex; justify-content: space-evenly; align-items: center;margin-bottom: 20px;">
+      <label for="purposeInput">Purpose:</label>
+      <input style="background-color: rgb(224, 212, 212); border: 0px;" type="text" id="purposeInput" placeholder="Enter purpose">
+    </div>
+  
+    <div style="display: flex; justify-content: center; align-items: center;"><button style="border: 0px; padding: 10px; background-color: rgb(109, 77, 77); color: white;"  onclick="calculateExpense()">Add Expense</button></div>
+  
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;" id="result"></div>
+  
+    <h2 style="text-align: center; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Expense List</h2>
+    <ul id="expenseList" style="text-align: center;"></ul>
+  
+    <div style="text-align: center;" id="totalAmount"></div>
+ </div>
+  <!-- footer -->
+  <footer>
+    <div class="footer">
+        <div class="canv">
+<a href="index.html">
+              <img src="./img/elavate.png" alt="">
+  
+</a>
+        </div>
+        <div class="canv">
+            <h5>About US</h5>
+            <P>Revamp your life with our planner. Set goals, track progress, and build a healthier, fulfilling life.
+            </P>
+        </div>
+
+       
+        <div class="canv">
+            <h5>Contact Us</h5>
+            <p>+0 12 457 4578</p>
+
+        </div>
+    </div>
+    </div>
+    <HR>
+    </HR>
+</footer>
+
+  <script>
+    let totalExpense = 0;
+
+    function calculateExpense() {
+      const amountInput = document.getElementById('amountInput');
+      const purposeInput = document.getElementById('purposeInput');
+      const resultDiv = document.getElementById('result');
+      const expenseList = document.getElementById('expenseList');
+      const totalAmountDiv = document.getElementById('totalAmount');
+
+      if (amountInput.value.trim() === '' || purposeInput.value.trim() === '') {
+        alert('Please enter both amount and purpose.');
+        return;
+      }
+
+      const expenseAmount = parseFloat(amountInput.value);
+
+      if (isNaN(expenseAmount) || expenseAmount <= 0) {
+        alert('Please enter a valid positive number for the amount.');
+        return;
+      }
+
+      totalExpense += expenseAmount;
+
+      resultDiv.textContent = `Total Expense: Rs.${totalExpense.toFixed(2)}`;
+
+      const expenseItem = document.createElement('li');
+      expenseItem.className = 'expenseItem';
+      expenseItem.innerHTML = `<span>${purposeInput.value}</span><span> Rs.${expenseAmount.toFixed(2)}</span>`;
+
+      expenseList.appendChild(expenseItem);
+
+      amountInput.value = ''; // Clear amount input field after adding expense
+      purposeInput.value = ''; // Clear purpose input field after adding expense
+
+      totalAmountDiv.textContent = `Total Amount: Rs.${totalExpense.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
